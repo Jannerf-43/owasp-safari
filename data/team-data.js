@@ -24,8 +24,8 @@ window.TEAM_DATA = {
         '메인 페이지 디자인',
         '공통 UI 구성',
       ],
-      github: 'https://naver.com',
-      blog: 'https://google.com',
+      github: 'https://github.com/sjunlee0116/portpolio',
+      blog: 'https://m.blog.naver.com/PostList.naver?blogId=sjunlee16&tab=1',
     },
     {
       name: '손유승',
