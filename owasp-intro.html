@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OWASP Safari | OWASP 소개</title>
+    <link rel="stylesheet" href="css/global.css">
+
+</head>
+<body>
+    <nav id="nav-bar" class="site-nav">
+    <a class="nav-logo" href="index.html">OWASP Safari</a>
+    <div class="nav-links">
+        <a href="index.html">메인</a>
+        <a href="owasp-intro.html">OWASP 소개</a>
+        <a href="team.html">팀 소개</a>
+        <a href="news.html">보안 뉴스</a>
+        <a href="games.html">게임</a>
+        <a href="vuln-broken-auth.html">취약한 인증</a>
+        <a href="vuln-injection.html">Injection</a>
+        <a href="vuln-xss.html">XSS</a>
+        <a href="vuln-bac.html">접근 제어</a>
+        <a href="vuln-crypto.html">암호화 오류</a>
+        <a href="vuln-ssrf.html">SSRF</a>
+    </div>
+    <!-- 다크/화이트 모드 버튼 -->
+    <button id="themeToggle" class="theme-btn">
+        🌙 Dark
+    </button>
+</nav>
+
+    <main id="owasp-intro-page-container" class="page-container">
+        <section class="hero-section">
+            <p class="eyebrow">Overview</p>
+            <h1>OWASP Top 10이란?</h1>
+            <p class="hero-description">OWASP Top 10은 웹 애플리케이션에서 자주 발견되는 주요 보안 위험을 정리한 대표적인 보안 학습 기준입니다.</p>
+        </section>
+
+        <section class="content-grid">
+<article class="info-panel">
+            <h2>왜 중요한가?</h2>
+            <p>웹 서비스는 로그인, 결제, 게시글, 파일 업로드처럼 사용자의 입력을 계속 처리합니다. 입력값 검증, 인증, 권한 확인, 암호화가 부족하면 공격자가 시스템을 악용할 수 있습니다.</p>
+        </article>
+<article class="info-panel">
+            <h2>이 사이트의 목표</h2>
+            <p>공격을 실제 서비스에 적용하는 것이 아니라, 취약점의 개념과 방어 필요성을 안전한 학습 환경에서 이해하는 것입니다.</p>
+        </article>
+<article class="info-panel">
+            <h2>학습 방식</h2>
+            <p>각 페이지는 개념, 공격 흐름, 위험성, 방어 대책, 간단한 체험 UI로 구성됩니다.</p>
+        </article>
+</section>
+    </main>
+
+    <footer class="site-footer">
+        <p>OWASP Safari Project · Educational Purpose Only</p>
+    </footer>
+   <script src="js/interactions.js"></script>
+<script src="js/theme.js"></script>
+</body>
+</html>

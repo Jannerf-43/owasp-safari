@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OWASP Safari | Injection</title>
+    <link rel="stylesheet" href="css/global.css">
+</head>
+<body>
+    <nav id="nav-bar" class="site-nav">
+        <a class="nav-logo" href="index.html">OWASP Safari</a>
+        <div class="nav-links">
+        <a href="index.html">메인</a>
+        <a href="owasp-intro.html">OWASP 소개</a>
+        <a href="team.html">팀 소개</a>
+        <a href="news.html">보안 뉴스</a>
+        <a href="games.html">게임</a>
+        <a href="vuln-broken-auth.html">취약한 인증</a>
+        <a href="vuln-injection.html">Injection</a>
+        <a href="vuln-xss.html">XSS</a>
+        <a href="vuln-bac.html">접근 제어</a>
+        <a href="vuln-crypto.html">암호화 오류</a>
+        <a href="vuln-ssrf.html">SSRF</a>
+    </div>
+        <!-- 다크/화이트 모드 버튼 -->
+    <button id="themeToggle" class="theme-btn">
+        🌙 Dark
+    </button>
+    </nav>
+
+    <main id="injection-page-container" class="page-container">
+        <section class="hero-section">
+            <p class="eyebrow">Vulnerability 02</p>
+            <h1>SQL Injection 등 인젝션</h1>
+            <p class="hero-description">입력값이 검증되지 않은 채 명령어나 쿼리로 처리될 때 발생하는 대표적인 취약점입니다.</p>
+        </section>
+
+        <section class="content-grid">
+            <article class="info-panel">
+                <h2>개념</h2>
+                <p>공격자는 입력창에 일반 데이터가 아닌 SQL 조각이나 명령문을 넣어 서버의 의도와 다른 동작을 유도할 수 있습니다.</p>
+            </article>
+            <article class="info-panel">
+                <h2>공격 흐름</h2>
+                <ol class="flow-list">
+                    <li>사용자 입력 전달</li>
+                    <li>서버가 입력값을 쿼리에 결합</li>
+                    <li>검증 실패 시 쿼리 구조 변경</li>
+                    <li>인증 우회 또는 데이터 노출 가능</li>
+                </ol>
+            </article>
+            <article class="info-panel">
+                <h2>방어 대책</h2>
+                <ul class="defense-list">
+                    <li>Prepared Statement 사용</li>
+                    <li>입력값 검증</li>
+                    <li>DB 계정 권한 최소화</li>
+                    <li>에러 메시지 노출 제한</li>
+                </ul>
+            </article>
+        </section>
+
+        <section class="dashboard-section" aria-labelledby="lab-cta-title">
+            <div class="section-head">
+                <h2 id="lab-cta-title">🧪 모의 실습</h2>
+            </div>
+            <p class="muted-text">개념을 익혔다면 안전한 모의 환경에서 직접 체험해 보세요.</p>
+            <a class="card-link" href="lab-injection.html">Injection 실습실 가기 →</a>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>OWASP Safari Project · Educational Purpose Only</p>
+    </footer>
+    <script src="js/interactions.js"></script>
+<script src="js/theme.js"></script>
+</body>
+</html>

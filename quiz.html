@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OWASP Safari | 퀴즈</title>
+    <link rel="stylesheet" href="css/global.css">
+    <!-- 데이터(전역 변수) → 로직 순서로 로드 -->
+    <script src="data/content-data.js" defer></script>
+    <script src="data/quiz-data.js" defer></script>
+    <script src="js/main-loader.js" defer></script>
+    <script src="js/quiz.js" defer></script>
+</head>
+<body>
+
+<nav id="nav-bar" class="site-nav">
+    <a class="nav-logo" href="index.html">OWASP Safari</a>
+    <div class="nav-links">
+        <a href="index.html">메인</a>
+        <a href="owasp-intro.html">OWASP 소개</a>
+        <a href="team.html">팀 소개</a>
+        <a href="news.html">보안 뉴스</a>
+        <a href="games.html">게임</a>
+        <a href="vuln-broken-auth.html">취약한 인증</a>
+        <a href="vuln-injection.html">Injection</a>
+        <a href="vuln-xss.html">XSS</a>
+        <a href="vuln-bac.html">접근 제어</a>
+        <a href="vuln-crypto.html">암호화 오류</a>
+        <a href="vuln-ssrf.html">SSRF</a>
+    </div>
+    <button id="themeToggle" class="theme-btn">🌙 Dark</button>
+</nav>
+
+<main id="quiz-page-container" class="page-container">
+
+    <section class="hero-section">
+        <p class="eyebrow" data-content="quiz.eyebrow">Knowledge Check</p>
+        <h1 data-content="quiz.title">OWASP 실습 퀴즈</h1>
+        <p class="hero-description" data-content="quiz.description">불러오는 중...</p>
+    </section>
+
+    <section class="quiz-controls" aria-label="퀴즈 정렬">
+        <label for="quiz-sort">정렬</label>
+        <select id="quiz-sort" class="news-category-select">
+            <option value="default">기본순</option>
+            <option value="difficulty">난이도순 (쉬움→어려움)</option>
+            <option value="random">무작위</option>
+        </select>
+        <span class="muted-text" style="font-size:13px">⌨ 키보드: 1~4 선택 · Enter 다음</span>
+    </section>
+
+    <!-- 문제 카드 -->
+    <section id="quiz-card" class="quiz-card" aria-live="polite">
+        <div class="quiz-topbar">
+            <span id="quiz-progress" class="quiz-progress">문제 1 / 1</span>
+            <span id="quiz-score" class="quiz-score">0점</span>
+        </div>
+        <div class="quiz-tags">
+            <span id="quiz-category" class="quiz-category-tag"></span>
+            <span id="quiz-difficulty" class="quiz-diff-badge"></span>
+        </div>
+        <h2 id="quiz-question" class="quiz-question">불러오는 중...</h2>
+
+        <!-- 객관식 -->
+        <div id="quiz-options" class="quiz-options"></div>
+
+        <!-- 입력 매칭형 -->
+        <div id="quiz-input-wrap" class="quiz-input-wrap" style="display:none">
+            <input id="quiz-input" type="text" class="quiz-input" placeholder="정답을 입력하세요">
+            <button id="quiz-submit" type="button" class="quiz-next-btn">제출</button>
+        </div>
+
+        <p id="quiz-explanation" class="quiz-explanation"></p>
+        <button id="quiz-next" class="quiz-next-btn" type="button" style="display:none">다음 문제 →</button>
+    </section>
+
+    <!-- 결과 -->
+    <section id="quiz-result" class="quiz-result" style="display:none">
+        <p class="eyebrow">Result</p>
+        <h2 id="result-pct" class="result-pct">0점</h2>
+        <p id="result-points" class="result-score"></p>
+        <p id="result-score" class="result-score"></p>
+        <div id="result-breakdown" class="result-breakdown"></div>
+        <p id="result-best" class="muted-text"></p>
+        <p id="result-message" class="result-message"></p>
+        <button id="quiz-restart" class="quiz-next-btn" type="button">다시 풀기 ↻</button>
+    </section>
+
+</main>
+
+<footer class="site-footer">
+    <p data-content="meta.footer">OWASP Safari Project · Educational Purpose Only</p>
+</footer>
+
+<script src="js/interactions.js"></script>
+<script src="js/theme.js"></script>
+</body>
+</html>

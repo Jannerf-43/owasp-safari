@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OWASP Safari | 보안 뉴스</title>
+    <link rel="stylesheet" href="css/global.css">
+    <script src="data/content-data.js" defer></script>
+    <script src="data/news-data.js" defer></script>
+    <script src="js/main-loader.js" defer></script>
+    <script src="js/feed.js" defer></script>
+    <script src="js/news.js" defer></script>
+</head>
+<body>
+
+<nav id="nav-bar" class="site-nav">
+    <a class="nav-logo" href="index.html">OWASP Safari</a>
+    <div class="nav-links">
+        <a href="index.html">메인</a>
+        <a href="owasp-intro.html">OWASP 소개</a>
+        <a href="team.html">팀 소개</a>
+        <a href="news.html">보안 뉴스</a>
+        <a href="games.html">게임</a>
+        <a href="vuln-broken-auth.html">취약한 인증</a>
+        <a href="vuln-injection.html">Injection</a>
+        <a href="vuln-xss.html">XSS</a>
+        <a href="vuln-bac.html">접근 제어</a>
+        <a href="vuln-crypto.html">암호화 오류</a>
+        <a href="vuln-ssrf.html">SSRF</a>
+    </div>
+    <button id="themeToggle" class="theme-btn">🌙 Dark</button>
+</nav>
+
+<main id="news-page-container" class="page-container">
+
+    <section class="hero-section">
+        <p class="eyebrow" data-content="news.eyebrow">Security Feed</p>
+        <h1 data-content="news.title">보안 뉴스</h1>
+        <p class="hero-description" data-content="news.description">불러오는 중...</p>
+    </section>
+
+    <!-- 실시간 피드 전광판 (feed.js) -->
+    <section class="dashboard-section" aria-labelledby="feed-heading">
+        <div class="section-head">
+            <h2 id="feed-heading" data-content="feed.title">실시간 보안 피드 전광판</h2>
+        </div>
+        <div class="feed-layout">
+            <div class="ticker-viewport" id="ticker-viewport" aria-label="실시간 보안 뉴스 전광판"></div>
+            <aside class="feed-side">
+                <div class="feed-controls">
+                    <button id="feed-play" class="quiz-next-btn" type="button">⏸ 정지</button>
+                    <button id="feed-direction" class="quiz-next-btn" type="button">⬆ 위로</button>
+                    <label for="feed-speed">속도</label>
+                    <input id="feed-speed" type="range" min="0.2" max="2.5" step="0.1" value="0.6">
+                    <label for="feed-category">분류</label>
+                    <select id="feed-category" class="news-category-select">
+                        <option value="all">전체 분류</option>
+                    </select>
+                </div>
+                <div class="feed-stats-box">
+                    <h2>분류별 건수</h2>
+                    <div id="feed-stats" class="feed-stats"></div>
+                    <p class="muted-text" style="font-size:13px;margin-top:10px">
+                        마우스를 전광판 위에 올리면 멈추고, 카드를 클릭하면 원문이 열립니다.
+                    </p>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <!-- 뉴스 검색/필터 목록 (news.js) -->
+    <section class="dashboard-section" aria-labelledby="news-search-heading">
+        <div class="section-head">
+            <h2 id="news-search-heading">뉴스 검색</h2>
+        </div>
+        <div class="news-controls" aria-label="뉴스 검색 및 필터">
+            <input id="news-search" type="search" class="news-search-input"
+                   placeholder="🔍 키워드 검색 (제목·요약·태그)">
+            <select id="news-category" class="news-category-select">
+                <option value="all">전체 분류</option>
+            </select>
+            <span id="news-count" class="news-count muted-text">0건</span>
+        </div>
+        <div id="news-list" class="news-grid"><!-- JS 렌더 --></div>
+    </section>
+
+</main>
+
+<footer class="site-footer">
+    <p data-content="meta.footer">OWASP Safari Project · Educational Purpose Only</p>
+</footer>
+
+<script src="js/interactions.js"></script>
+<script src="js/theme.js"></script>
+</body>
+</html>

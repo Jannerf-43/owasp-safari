@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OWASP Safari | 접근 제어</title>
+    <link rel="stylesheet" href="css/global.css">
+</head>
+<body>
+    <nav id="nav-bar" class="site-nav">
+    <a class="nav-logo" href="index.html">OWASP Safari</a>
+    <div class="nav-links">
+        <a href="index.html">메인</a>
+        <a href="owasp-intro.html">OWASP 소개</a>
+        <a href="team.html">팀 소개</a>
+        <a href="news.html">보안 뉴스</a>
+        <a href="games.html">게임</a>
+        <a href="vuln-broken-auth.html">취약한 인증</a>
+        <a href="vuln-injection.html">Injection</a>
+        <a href="vuln-xss.html">XSS</a>
+        <a href="vuln-bac.html">접근 제어</a>
+        <a href="vuln-crypto.html">암호화 오류</a>
+        <a href="vuln-ssrf.html">SSRF</a>
+    </div>
+    <!-- 다크/화이트 모드 버튼 -->
+    <button id="themeToggle" class="theme-btn">
+        🌙 Dark
+    </button>
+</nav>
+
+    <main id="bac-page-container" class="page-container">
+        <section class="hero-section">
+            <p class="eyebrow">Vulnerability 04</p>
+            <h1>취약한 접근 제어 Broken Access Control</h1>
+            <p class="hero-description">권한 확인이 부족하면 사용자가 접근하면 안 되는 데이터나 기능에 접근할 수 있습니다.</p>
+        </section>
+
+        <section class="content-grid">
+    <article class="info-panel">
+        <h2>개념</h2>
+        <p>URL 파라미터 조작, 관리자 페이지 직접 접근, 다른 사용자의 리소스 ID 조회 등이 대표적인 예시입니다.</p>
+    </article>
+
+    <article class="info-panel">
+        <h2>공격 흐름</h2>
+        <ol class="flow-list">
+            <li>사용자 요청 발생</li>
+<li>서버가 권한 확인 생략</li>
+<li>다른 사용자의 리소스 접근</li>
+<li>개인정보 노출 또는 기능 오남용</li>
+        </ol>
+    </article>
+
+    <article class="info-panel">
+        <h2>방어 대책</h2>
+        <ul class="defense-list">
+            <li>서버 측 권한 검사</li>
+<li>기본 차단 정책</li>
+<li>리소스 소유자 확인</li>
+<li>관리자 기능 분리</li>
+        </ul>
+    </article>
+</section>
+
+        <section class="dashboard-section" aria-labelledby="lab-cta-title">
+            <div class="section-head">
+                <h2 id="lab-cta-title">🧪 모의 실습</h2>
+            </div>
+            <p class="muted-text">개념을 익혔다면 안전한 모의 환경에서 직접 체험해 보세요.</p>
+            <a class="card-link" href="lab-bac.html">접근 제어 실습실 가기 →</a>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>OWASP Safari Project · Educational Purpose Only</p>
+    </footer>
+    <script src="js/interactions.js"></script>
+<script src="js/theme.js"></script>
+</body>
+</html>

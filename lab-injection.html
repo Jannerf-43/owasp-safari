@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OWASP Safari | SQL Injection 실습실</title>
+    <link rel="stylesheet" href="css/global.css">
+    <script src="data/payloads-data.js" defer></script>
+    <script src="js/payloads.js" defer></script>
+    <script src="js/injection.js" defer></script>
+</head>
+<body>
+    <nav id="nav-bar" class="site-nav">
+        <a class="nav-logo" href="index.html">OWASP Safari</a>
+        <div class="nav-links">
+        <a href="index.html">메인</a>
+        <a href="owasp-intro.html">OWASP 소개</a>
+        <a href="team.html">팀 소개</a>
+        <a href="news.html">보안 뉴스</a>
+        <a href="games.html">게임</a>
+        <a href="vuln-broken-auth.html">취약한 인증</a>
+        <a href="vuln-injection.html">Injection</a>
+        <a href="vuln-xss.html">XSS</a>
+        <a href="vuln-bac.html">접근 제어</a>
+        <a href="vuln-crypto.html">암호화 오류</a>
+        <a href="vuln-ssrf.html">SSRF</a>
+    </div>
+        <!-- 다크/화이트 모드 버튼 -->
+    <button id="themeToggle" class="theme-btn">
+        🌙 Dark
+    </button>
+    </nav>
+
+    <main id="injection-page-container" class="page-container">
+        <section class="hero-section">
+            <p class="eyebrow">Hands-on Lab</p>
+            <h1>SQL Injection 실습실</h1>
+            <p class="hero-description">안전한 모의 환경입니다. 입력값은 서버로 전송되지 않고 브라우저에서만 시뮬레이션됩니다.</p>
+        </section>
+
+        <section class="lab-panel" aria-labelledby="injection-lab-title">
+            <h2 id="injection-lab-title">SQL Injection 체험 UI</h2>
+            <p class="muted-text">
+                취약한 방식과 안전한 방식을 직접 비교해보세요.<br>
+                <strong style="color:var(--point)">힌트:</strong>
+                취약한 방식에서 아이디에 <code>' OR '1'='1</code>, 비밀번호에 <code>--</code> 를 입력하면 인증이 우회됩니다.
+            </p>
+            <div class="form-grid">
+                <label for="injection-mode">서버 모드</label>
+                <select id="injection-mode">
+                    <option value="vulnerable">⚠️ 취약한 방식 (문자열 결합)</option>
+                    <option value="safe">✅ 안전한 방식 (Prepared Statement)</option>
+                </select>
+                <label for="injection-username">아이디</label>
+                <input id="injection-username" type="text" placeholder="admin  또는  ' OR '1'='1">
+                <label for="injection-password">비밀번호</label>
+                <input id="injection-password" type="text" placeholder="비밀번호  또는  --">
+                <button id="injection-login-button" type="button">로그인 시도</button>
+            </div>
+            <div id="injection-result" class="result-box">
+                모드를 선택하고 로그인을 시도해보세요.
+            </div>
+        </section>
+
+        <div class="dashboard-section">
+            <a class="card-link" href="vuln-injection.html">← Injection 이론 페이지로 돌아가기</a>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>OWASP Safari Project · Educational Purpose Only</p>
+    </footer>
+    <script src="js/interactions.js"></script>
+<script src="js/theme.js"></script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OWASP Safari | XSS</title>
+    <link rel="stylesheet" href="css/global.css">
+</head>
+<body>
+    <nav id="nav-bar" class="site-nav">
+    <a class="nav-logo" href="index.html">OWASP Safari</a>
+    <div class="nav-links">
+        <a href="index.html">메인</a>
+        <a href="owasp-intro.html">OWASP 소개</a>
+        <a href="team.html">팀 소개</a>
+        <a href="news.html">보안 뉴스</a>
+        <a href="games.html">게임</a>
+        <a href="vuln-broken-auth.html">취약한 인증</a>
+        <a href="vuln-injection.html">Injection</a>
+        <a href="vuln-xss.html">XSS</a>
+        <a href="vuln-bac.html">접근 제어</a>
+        <a href="vuln-crypto.html">암호화 오류</a>
+        <a href="vuln-ssrf.html">SSRF</a>
+    </div>
+    <!-- 다크/화이트 모드 버튼 -->
+    <button id="themeToggle" class="theme-btn">
+        🌙 Dark
+    </button>
+</nav>
+
+    <main id="xss-page-container" class="page-container">
+        <section class="hero-section">
+            <p class="eyebrow">Vulnerability 03</p>
+            <h1>크로스 사이트 스크립팅 XSS</h1>
+            <p class="hero-description">사용자 입력이 검증 없이 페이지에 출력될 때, 브라우저에서 원치 않는 스크립트가 실행될 수 있습니다.</p>
+        </section>
+
+        <section class="content-grid">
+    <article class="info-panel">
+        <h2>개념</h2>
+        <p>게시판 댓글, 검색어, 프로필 소개처럼 사용자의 입력을 다시 화면에 보여주는 기능에서 자주 설명되는 취약점입니다.</p>
+    </article>
+
+    <article class="info-panel">
+        <h2>공격 흐름</h2>
+        <ol class="flow-list">
+            <li>사용자 입력 저장 또는 반영</li>
+<li>페이지가 입력값 출력</li>
+<li>브라우저가 스크립트로 해석</li>
+<li>쿠키 탈취·피싱·화면 변조 위험</li>
+        </ol>
+    </article>
+
+    <article class="info-panel">
+        <h2>방어 대책</h2>
+        <ul class="defense-list">
+            <li>HTML 이스케이프 처리</li>
+<li>Content Security Policy 적용</li>
+<li>입력값 검증</li>
+<li>출력 위치에 맞는 인코딩</li>
+        </ul>
+    </article>
+</section>
+
+        <section class="dashboard-section" aria-labelledby="lab-cta-title">
+            <div class="section-head">
+                <h2 id="lab-cta-title">🧪 모의 실습</h2>
+            </div>
+            <p class="muted-text">개념을 익혔다면 안전한 모의 환경에서 직접 체험해 보세요.</p>
+            <a class="card-link" href="lab-xss.html">XSS 실습실 가기 →</a>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>OWASP Safari Project · Educational Purpose Only</p>
+    </footer>
+    <script src="js/interactions.js"></script>
+<script src="js/theme.js"></script>
+</body>
+</html>

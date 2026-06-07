@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OWASP Safari | 매칭 게임</title>
+    <link rel="stylesheet" href="css/global.css">
+    <script src="data/content-data.js" defer></script>
+    <script src="data/match-data.js" defer></script>
+    <script src="js/main-loader.js" defer></script>
+    <script src="js/match.js" defer></script>
+</head>
+<body>
+
+<nav id="nav-bar" class="site-nav">
+    <a class="nav-logo" href="index.html">OWASP Safari</a>
+    <div class="nav-links">
+        <a href="index.html">메인</a>
+        <a href="owasp-intro.html">OWASP 소개</a>
+        <a href="team.html">팀 소개</a>
+        <a href="news.html">보안 뉴스</a>
+        <a href="games.html">게임</a>
+        <a href="vuln-broken-auth.html">취약한 인증</a>
+        <a href="vuln-injection.html">Injection</a>
+        <a href="vuln-xss.html">XSS</a>
+        <a href="vuln-bac.html">접근 제어</a>
+        <a href="vuln-crypto.html">암호화 오류</a>
+        <a href="vuln-ssrf.html">SSRF</a>
+    </div>
+    <button id="themeToggle" class="theme-btn">🌙 Dark</button>
+</nav>
+
+<main id="match-page-container" class="page-container">
+
+    <section class="hero-section">
+        <p class="eyebrow" data-content="match.eyebrow">Drag &amp; Drop</p>
+        <h1 data-content="match.title">취약점 ↔ 방어 대책 매칭</h1>
+        <p class="hero-description" data-content="match.description">불러오는 중...</p>
+    </section>
+
+    <section id="match-board" class="match-board">
+        <div id="match-vulns" class="match-col"><h2>취약점</h2></div>
+        <div id="match-defenses" class="match-col"><h2>방어 대책</h2></div>
+    </section>
+
+    <div class="match-status">
+        <span id="match-progress" class="match-progress">0 / 0</span>
+        <button id="match-reset" class="quiz-next-btn" type="button">다시 섞기 ↻</button>
+    </div>
+    <p id="match-message" class="result-message"></p>
+
+</main>
+
+<footer class="site-footer">
+    <p data-content="meta.footer">OWASP Safari Project · Educational Purpose Only</p>
+</footer>
+
+<script src="js/interactions.js"></script>
+<script src="js/theme.js"></script>
+</body>
+</html>

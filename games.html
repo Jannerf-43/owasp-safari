@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OWASP Safari | 게임</title>
+    <link rel="stylesheet" href="css/global.css">
+    <script src="data/content-data.js" defer></script>
+    <script src="js/main-loader.js" defer></script>
+</head>
+<body>
+
+<nav id="nav-bar" class="site-nav">
+    <a class="nav-logo" href="index.html">OWASP Safari</a>
+    <div class="nav-links">
+        <a href="index.html">메인</a>
+        <a href="owasp-intro.html">OWASP 소개</a>
+        <a href="team.html">팀 소개</a>
+        <a href="news.html">보안 뉴스</a>
+        <a href="games.html">게임</a>
+        <a href="vuln-broken-auth.html">취약한 인증</a>
+        <a href="vuln-injection.html">Injection</a>
+        <a href="vuln-xss.html">XSS</a>
+        <a href="vuln-bac.html">접근 제어</a>
+        <a href="vuln-crypto.html">암호화 오류</a>
+        <a href="vuln-ssrf.html">SSRF</a>
+    </div>
+    <button id="themeToggle" class="theme-btn">🌙 Dark</button>
+</nav>
+
+<main id="games-page-container" class="page-container">
+
+    <section class="hero-section">
+        <p class="eyebrow" data-content="games.eyebrow">Games</p>
+        <h1 data-content="games.title">OWASP 게임</h1>
+        <p class="hero-description" data-content="games.description">불러오는 중...</p>
+    </section>
+
+    <section class="card-grid">
+        <article class="feature-card">
+            <h2>🧠 OWASP 퀴즈</h2>
+            <p>객관식과 입력 매칭형 문제로 개념을 점검합니다. 난이도 정렬·가중 점수·최고 기록 기능이 있습니다.</p>
+            <a class="card-link" href="quiz.html">퀴즈 풀기 →</a>
+        </article>
+        <article class="feature-card">
+            <h2>🔗 취약점 매칭</h2>
+            <p>취약점과 방어 대책을 드래그 앤 드롭으로 연결합니다. (모바일은 탭으로 선택)</p>
+            <a class="card-link" href="match.html">매칭하기 →</a>
+        </article>
+        <article class="feature-card">
+            <h2>🚨 공격 탐지 게임</h2>
+            <p>제한 시간 안에 입력이 공격인지 정상인지 빠르게 판별하는 순발력 게임입니다.</p>
+            <a class="card-link" href="game.html">도전하기 →</a>
+        </article>
+    </section>
+
+</main>
+
+<footer class="site-footer">
+    <p data-content="meta.footer">OWASP Safari Project · Educational Purpose Only</p>
+</footer>
+
+<script src="js/interactions.js"></script>
+<script src="js/theme.js"></script>
+</body>
+</html>

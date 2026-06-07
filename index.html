@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OWASP Safari | 대시보드</title>
+    <link rel="stylesheet" href="css/global.css">
+    <script src="data/content-data.js" defer></script>
+    <script src="data/news-data.js" defer></script>
+    <script src="js/main-loader.js" defer></script>
+    <script src="js/feed.js" defer></script>
+</head>
+<body>
+
+<nav id="nav-bar" class="site-nav">
+    <a class="nav-logo" href="index.html">OWASP Safari</a>
+    <div class="nav-links">
+        <a href="index.html">메인</a>
+        <a href="owasp-intro.html">OWASP 소개</a>
+        <a href="team.html">팀 소개</a>
+        <a href="news.html">보안 뉴스</a>
+        <a href="games.html">게임</a>
+        <a href="vuln-broken-auth.html">취약한 인증</a>
+        <a href="vuln-injection.html">Injection</a>
+        <a href="vuln-xss.html">XSS</a>
+        <a href="vuln-bac.html">접근 제어</a>
+        <a href="vuln-crypto.html">암호화 오류</a>
+        <a href="vuln-ssrf.html">SSRF</a>
+    </div>
+    <!-- 다크/화이트 모드 버튼 -->
+    <button id="themeToggle" class="theme-btn">🌙 Dark</button>
+</nav>
+
+<main id="home-page-container" class="page-container">
+
+    <section class="hero-section">
+        <p class="eyebrow" data-content="index.eyebrow">Cyber Security Learning · 2025</p>
+        <h1 data-content="index.title">OWASP Top 10 : 2025 웹 취약점 학습 대시보드</h1>
+        <p class="hero-description" data-content="index.description">불러오는 중...</p>
+    </section>
+
+    <!-- 실시간 보안 피드 (히어로 바로 아래, 작은 전광판 위젯) -->
+    <section class="dashboard-section" aria-labelledby="feed-preview-heading">
+        <div class="section-head">
+            <h2 id="feed-preview-heading" data-content="index.feedHeading">실시간 보안 피드</h2>
+            <div class="feed-mini-controls">
+                <button id="feed-play" class="feed-mini-btn" type="button" data-compact aria-label="재생/정지">⏸</button>
+                <a class="card-link" href="news.html">전체 보기 →</a>
+            </div>
+        </div>
+        <div class="ticker-viewport ticker-compact" id="ticker-viewport" aria-label="실시간 보안 뉴스 전광판"><!-- feed.js 렌더 --></div>
+    </section>
+
+    <!-- OWASP Top 10 : 2025 (main-loader.js가 JSON에서 렌더) -->
+    <section class="dashboard-section" aria-labelledby="top10-heading">
+        <div class="section-head">
+            <h2 id="top10-heading" data-content="index.top10Heading">OWASP Top 10 : 2025</h2>
+            <p class="muted-text" data-content="index.top10Note"></p>
+        </div>
+        <div id="owasp-top10-grid" class="top10-grid"><!-- JS 렌더 --></div>
+    </section>
+
+</main>
+
+<footer class="site-footer">
+    <p data-content="meta.footer">OWASP Safari Project · Educational Purpose Only</p>
+</footer>
+
+<script src="js/interactions.js"></script>
+<script src="js/theme.js"></script>
+</body>
+</html>
