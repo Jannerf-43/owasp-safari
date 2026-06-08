@@ -14,7 +14,7 @@ window.TEAM_DATA = {
       ],
       github: 'https://github.com/anty9915-sudo',
       blog: 'https://blog.naver.com/anty9951',
-      portfolio: 'https://son-portfolio-green.vercel.app/portfolio.html',
+      portfolio: 'https://mypage2-sigma.vercel.app/',
     },
     {
       name: '이승준',
@@ -27,7 +27,7 @@ window.TEAM_DATA = {
       ],
       github: 'https://github.com/sjunlee0116/portpolio',
       blog: 'https://m.blog.naver.com/PostList.naver?blogId=sjunlee16&tab=1',
-      portfolio: 'https://son-portfolio-green.vercel.app/portfolio.html',
+      portfolio: 'https://2026-6-5-final.vercel.app/',
     },
     {
       name: '손유승',
